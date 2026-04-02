@@ -1,37 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Data Visualization Activity on SVG</title>
+  <title>Data Visualization Activity on SVG</title>
 
-	<style type="text/css">
-		#header-title {
-			font-size: 24px;
-		}
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 24px 20px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #111827;
+    }
 
-		#visualization-activity {
-			width: 600px;
-			height: 500px;
-		}
+    #header-title {
+      margin: 0 auto 12px;
+      max-width: 1000px;
+      font-size: 24px;
+      text-align: center;
+    }
 
-		/* YOUR CSS CODE WILL GO HERE */
+    #visualization-activity {
+      display: block;
+      width: min(1000px, 100%);
+      height: auto;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
 
+    .chart-title {
+      font-size: 22px;
+      font-weight: 700;
+    }
 
-	</style>
+    .axis-line {
+      stroke: #9ca3af;
+      stroke-width: 2.5;
+    }
+
+    .tick-label {
+      font-size: 12px;
+      fill: #4b5563;
+    }
+
+    .y-axis-label {
+      font-size: 18px;
+      font-weight: 600;
+      fill: #111827;
+    }
+
+    .bar-line-1 {
+      fill: #0b5cab;
+    }
+
+    .bar-line-2 {
+      fill: #10ad4a;
+    }
+
+    .bar-line-3 {
+      fill: #f97f0e;
+    }
+
+    .bar-label {
+      font-size: 12px;
+      text-anchor: middle;
+      fill: #374151;
+    }
+
+    .x-axis-label {
+      font-size: 20px;
+      font-weight: 600;
+      fill: #111827;
+    }
+
+    .legend-label {
+      font-size: 12px;
+      fill: #111827;
+    }
+  </style>
 </head>
 
 <body>
-	<h1 id="header-title">
-		In-Class Acitivity by REPLACE_WITH_YOUR_NAME
-	</h1>
+  <h1 id="header-title">
+    In-Class Activity by Lian
+  </h1>
 
-	<svg id="visualization-activity">
-		<!-- YOUR SVG CODE WILL GO HERE -->
+  <svg id="visualization-activity" viewBox="0 0 1000 620" aria-labelledby="chart-title" role="img">
+    <g id="chart-header">
+      <text id="chart-title" class="chart-title" x="500" y="42" text-anchor="middle">
+        Top 6 Busiest Stations on Dec 1, 2024
+      </text>
+    </g>
 
+    <g id="chart-axes">
+      <line class="axis-line" x1="120" y1="70" x2="120" y2="500"></line>
+      <line class="axis-line" x1="120" y1="500" x2="870" y2="500"></line>
 
-	</svg>
+      <text class="tick-label" x="110" y="504" text-anchor="end">0</text>
+      <text class="tick-label" x="110" y="450" text-anchor="end">10,000</text>
+      <text class="tick-label" x="110" y="396" text-anchor="end">20,000</text>
+      <text class="tick-label" x="110" y="342" text-anchor="end">30,000</text>
+      <text class="tick-label" x="110" y="288" text-anchor="end">40,000</text>
+      <text class="tick-label" x="110" y="234" text-anchor="end">50,000</text>
+      <text class="tick-label" x="110" y="180" text-anchor="end">60,000</text>
+      <text class="tick-label" x="110" y="126" text-anchor="end">70,000</text>
+      <text class="tick-label" x="110" y="72" text-anchor="end">80,000</text>
+
+      <text class="y-axis-label" x="38" y="292" transform="rotate(-90 38 292)">
+        Entry Count
+      </text>
+
+      <text class="x-axis-label" x="495" y="580" text-anchor="middle">
+        Station Name
+      </text>
+    </g>
+
+    <g id="bars-group">
+      <g class="bar-group">
+        <rect class="bar-line-2" x="145" y="106" width="74" height="394"></rect>
+        <text class="bar-label" x="182" y="520">홍대입구</text>
+      </g>
+
+      <g class="bar-group">
+        <rect class="bar-line-2" x="268" y="159" width="74" height="341"></rect>
+        <text class="bar-label" x="305" y="520">잠실(송파구청)</text>
+      </g>
+
+      <g class="bar-group">
+        <rect class="bar-line-3" x="391" y="211" width="74" height="289"></rect>
+        <text class="bar-label" x="428" y="520">고속터미널</text>
+      </g>
+
+      <g class="bar-group">
+        <rect class="bar-line-1" x="514" y="281" width="74" height="219"></rect>
+        <text class="bar-label" x="551" y="520">서울역</text>
+      </g>
+
+      <g class="bar-group">
+        <rect class="bar-line-2" x="637" y="293" width="74" height="207"></rect>
+        <text class="bar-label" x="674" y="520">신림</text>
+      </g>
+
+      <g class="bar-group">
+        <rect class="bar-line-2" x="760" y="297" width="74" height="203"></rect>
+        <text class="bar-label" x="797" y="520">신도림</text>
+      </g>
+    </g>
+
+    <g id="legend-group">
+      <rect class="bar-line-1" x="900" y="95" width="14" height="14"></rect>
+      <text class="legend-label" x="920" y="107">Line 1</text>
+
+      <rect class="bar-line-2" x="900" y="118" width="14" height="14"></rect>
+      <text class="legend-label" x="920" y="130">Line 2</text>
+
+      <rect class="bar-line-3" x="900" y="141" width="14" height="14"></rect>
+      <text class="legend-label" x="920" y="153">Line 3</text>
+    </g>
+
+    <g id="axis-ticks">
+      <line class="axis-line" x1="112" y1="446" x2="120" y2="446"></line>
+      <line class="axis-line" x1="112" y1="392" x2="120" y2="392"></line>
+      <line class="axis-line" x1="112" y1="338" x2="120" y2="338"></line>
+      <line class="axis-line" x1="112" y1="284" x2="120" y2="284"></line>
+      <line class="axis-line" x1="112" y1="230" x2="120" y2="230"></line>
+      <line class="axis-line" x1="112" y1="176" x2="120" y2="176"></line>
+      <line class="axis-line" x1="112" y1="122" x2="120" y2="122"></line>
+      <line class="axis-line" x1="112" y1="68" x2="120" y2="68"></line>
+    </g>
+    
+    <g id="caption-group">
+      <text class="tick-label" x="500" y="606" text-anchor="middle">
+        Data: boarding passengers at the top 6 Seoul stations
+      </text>
+    </g>
+  </svg>
 
 </body>
 </html>
